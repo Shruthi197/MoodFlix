@@ -1,0 +1,333 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #141414;
+  color: white;
+}
+/* Toggle Container */
+.toggle-container {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide the default checkbox */
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+  border-radius: 34px;
+}
+
+/* Circle inside the slider */
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: transform 0.3s;
+  border-radius: 50%;
+}
+
+/* Change background color and move circle on toggle */
+.toggle-input:checked + .toggle-slider {
+  background-color: #5fa3ae;
+}
+
+.toggle-input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+
+/* Add additional styles for light mode as needed */
+
+/* Toggle Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 10px; /* Adjust this value to move it down */
+}
+
+/* Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #5fa3ae;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+header.light-mode {
+  background-color: #5fa3ae; /* Change as needed */
+}
+
+.menu-bar.light-mode {
+  background-color: #eaeaea;
+}
+
+.menu-bar.light-mode ul li a {
+  color: #000000;
+}
+
+.movie.light-mode img {
+  filter: brightness(0.8); /* Adjust image brightness */
+}
+
+/* Header Animation */
+@keyframes slide-down {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.movie-info {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+  color: white;
+}
+
+.movie-info h3 {
+  margin: 5px 0;
+}
+
+.movie-info p {
+  margin: 3px 0;
+}
+
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #5fa3ae;
+}
+
+.nav-left h1 {
+  margin: 0;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Profile Icon */
+.icon {
+  font-size: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 50%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Slight background for effect */
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Bar */
+.menu-bar {
+  display: none;
+  background-color: #282828;
+  padding: 10px;
+  position: absolute; /* Make it absolute */
+  top: 60px; /* Adjust based on header height */
+  right: 0; /* Align to the right */
+  animation: slide-in 0.3s forwards;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* Stack items */
+}
+
+.menu-bar ul li {
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.menu-bar ul li:hover {
+  background-color: #444;
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+/* Emoji Section */
+.emoji-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.emoji {
+  font-size: 40px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.3s, border 0.3s;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.emoji:hover {
+  border: 2px solid #52999f;
+  transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+/* Movies Grid */
+#movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.movie img, .movie iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie iframe {
+  display: none;
+}
+
+.movie:hover img {
+  display: none;
+}
+
+.movie:hover iframe {
+  display: block;
+}
+
+/* Slide-in Animation for Menu Bar */
+@keyframes slide-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie {
+    width: 90%;
+  }
+}

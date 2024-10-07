@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <h1>Netflix</h1>
+    </div>
+    <div class="nav-right">
+      <input type="text" class="search-bar" placeholder="Search...">
+      <span class="icon" id="profile">👤</span>
+      <span class="icon" id="menu">☰</span>
+    </div>
+  </header>
+
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="#">Downloads</a></li>
+      <li><a href="#">Watchlist</a></li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </nav>
+  
+ 
+  <label class="toggle-container">
+    <input type="checkbox" id="toggle-mode" class="toggle-input">
+    <span class="toggle-slider"></span>
+  </label>
+    
+  
+  
+
+  <section class="emoji-section">
+    <span class="emoji" id="happy">😊</span>
+    <span class="emoji" id="sad">😢</span>
+    <span class="emoji" id="angry">😡</span>
+    <span class="emoji" id="excited">😲</span>
+  </section>
+
+  <section id="movies" class="movies-grid">
+    <!-- Movies will be dynamically inserted here -->
+  </section>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
